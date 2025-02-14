@@ -15,11 +15,11 @@ export default function SalesPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-900/90 to-purple-800/90">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#1C1C1E] to-[#7A6F92]">
       <SiteHeader />
       <main className="flex-1 p-8">
         <section>
-          <div className="rounded-lg bg-white/20 p-6 mb-8">
+          <div className="rounded-lg bg-white/10 p-6 mb-8">
             <h2 className="text-2xl font-bold mb-2 text-white">Special Offers!</h2>
             <p className="text-white/70">
               Limited time deals on premium gaming gear!
@@ -36,11 +36,11 @@ export default function SalesPage() {
             ) : (
               products?.map((product) => (
                 <div key={product.id} className="relative">
-                  <ProductCard product={product} />
-                  <div className="absolute top-4 left-4 bg-red-500 text-white px-2 py-1 rounded text-sm">
+                  <div className="absolute top-4 left-4 z-10 bg-red-500 text-white px-2 py-1 rounded text-sm">
                     Save ${(product.originalPrice - product.price).toFixed(2)}
                   </div>
-                  <div className="absolute bottom-20 left-4 text-sm">
+                  <ProductCard product={product} />
+                  <div className="absolute bottom-[85px] left-4 text-sm z-10">
                     <span className="line-through text-white/60 mr-2">
                       ${product.originalPrice}
                     </span>

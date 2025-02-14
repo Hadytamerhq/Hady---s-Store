@@ -10,11 +10,11 @@ export default function HomePage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-900/90 to-purple-800/90">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#1C1C1E] to-[#7A6F92]">
       <SiteHeader />
       <main className="flex-1 p-8">
         <section>
-          <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">Featured Products</h2>
           <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {isLoading ? (
               [...Array(8)].map((_, i) => (

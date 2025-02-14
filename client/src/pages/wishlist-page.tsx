@@ -10,7 +10,7 @@ export default function WishlistPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-900/90 to-purple-800/90">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#1C1C1E] to-[#7A6F92]">
       <SiteHeader />
       <main className="flex-1 p-8">
         <section>
