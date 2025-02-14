@@ -1,10 +1,15 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Heart, TagIcon, LogOut } from "lucide-react";
+import { Heart, TagIcon, LogOut, Home } from "lucide-react";
 import { useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
 
 const menuItems = [
+  {
+    title: "Home",
+    icon: Home,
+    href: "/"
+  },
   {
     title: "Sales",
     icon: TagIcon,

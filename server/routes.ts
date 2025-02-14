@@ -8,74 +8,131 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const products = [
     {
       id: 1,
-      name: "Premium Wireless Headphones",
-      price: 299.99,
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
-      description: "High-quality wireless headphones with noise cancellation"
+      name: "Pro Gaming Laptop",
+      price: 1499.99,
+      image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500",
+      description: "High-performance gaming laptop with RTX 4080"
     },
     {
       id: 2,
-      name: "Ultra HD Camera",
-      price: 799.99,
-      image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500",
-      description: "Professional grade camera for stunning photos"
+      name: "4K Curved Monitor",
+      price: 699.99,
+      image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
+      description: "34-inch curved gaming monitor"
     },
     {
       id: 3,
-      name: "Portable Speaker",
+      name: "Mechanical Gaming Keyboard",
       price: 199.99,
-      image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
-      description: "Compact wireless speaker with amazing sound"
+      image: "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=500",
+      description: "RGB mechanical keyboard with Cherry MX switches"
     },
     {
       id: 4,
-      name: "Smart Watch",
-      price: 249.99,
-      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
-      description: "Advanced smartwatch with health tracking"
+      name: "Wireless Gaming Mouse",
+      price: 129.99,
+      image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500",
+      description: "Precision wireless gaming mouse"
     },
     {
       id: 5,
-      name: "Gaming Mouse",
-      price: 79.99,
-      image: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500",
-      description: "Precision gaming mouse with customizable buttons"
+      name: "Gaming Headset",
+      price: 159.99,
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",
+      description: "Surround sound gaming headset"
     },
     {
       id: 6,
-      name: "Mechanical Keyboard",
-      price: 159.99,
-      image: "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?w=500",
-      description: "Premium mechanical keyboard with RGB lighting"
+      name: "Gaming Chair",
+      price: 299.99,
+      image: "https://images.unsplash.com/photo-1610295427330-2587d3c959ba?w=500",
+      description: "Ergonomic gaming chair with lumbar support"
     },
     {
       id: 7,
-      name: "4K Monitor",
-      price: 399.99,
-      image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500",
-      description: "Ultra-wide 4K monitor for immersive viewing"
+      name: "Streaming Microphone",
+      price: 149.99,
+      image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=500",
+      description: "Professional USB streaming microphone"
     },
     {
       id: 8,
-      name: "Wireless Earbuds",
-      price: 149.99,
-      image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",
-      description: "True wireless earbuds with premium sound"
+      name: "Webcam Pro",
+      price: 199.99,
+      image: "https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=500",
+      description: "4K webcam for streaming"
+    },
+    {
+      id: 9,
+      name: "RGB LED Strip",
+      price: 29.99,
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500",
+      description: "Customizable RGB LED strip for setup"
+    },
+    {
+      id: 10,
+      name: "Gaming Mouse Pad",
+      price: 39.99,
+      image: "https://images.unsplash.com/photo-1588495752527-77d65c21f7cd?w=500",
+      description: "Extra large RGB gaming mouse pad"
     }
   ];
 
-  const onSaleProducts = products.map(product => ({
-    ...product,
-    price: Number((product.price * 0.8).toFixed(2)), // 20% off
-    onSale: true
-  })).slice(0, 4); // Only first 4 products on sale
+  // Completely different products for sale
+  const saleProducts = [
+    {
+      id: 101,
+      name: "VR Headset Pro",
+      originalPrice: 599.99,
+      price: 399.99,
+      image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=500",
+      description: "Premium VR headset for immersive gaming",
+      onSale: true
+    },
+    {
+      id: 102,
+      name: "Gaming Console X",
+      originalPrice: 499.99,
+      price: 399.99,
+      image: "https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=500",
+      description: "Next-gen gaming console",
+      onSale: true
+    },
+    {
+      id: 103,
+      name: "Portable SSD 2TB",
+      originalPrice: 299.99,
+      price: 199.99,
+      image: "https://images.unsplash.com/photo-1563448676363-679a9ff572d5?w=500",
+      description: "Ultra-fast portable storage",
+      onSale: true
+    },
+    {
+      id: 104,
+      name: "Wireless Controller",
+      originalPrice: 69.99,
+      price: 49.99,
+      image: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=500",
+      description: "Premium wireless game controller",
+      onSale: true
+    },
+    {
+      id: 105,
+      name: "Gaming Router",
+      originalPrice: 249.99,
+      price: 179.99,
+      image: "https://images.unsplash.com/photo-1544443632-6ab5e5e2a57e?w=500",
+      description: "Low-latency gaming router",
+      onSale: true
+    }
+  ];
 
   app.get("/api/products", (_req, res) => {
     res.json(products);
   });
 
   app.get("/api/products/sales", (_req, res) => {
-    res.json(onSaleProducts);
+    res.json(saleProducts);
   });
 
   let wishlistItems: number[] = [];
