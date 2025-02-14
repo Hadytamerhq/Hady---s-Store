@@ -29,7 +29,7 @@ export default function AuthPage() {
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl flex items-center gap-2 text-white">
               <Laptop className="h-6 w-6" />
-              Premium Tech
+              Hady's Shop
             </CardTitle>
             <CardDescription className="text-[#C0C0C0]">
               Sign in or create an account to continue
@@ -136,7 +136,7 @@ export default function AuthPage() {
       <div className="hidden lg:block bg-transparent p-12">
         <div className="h-full flex items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl font-bold text-white">Welcome to Premium Tech</h1>
+            <h1 className="text-4xl font-bold text-white">Welcome to Hady's Shop</h1>
             <p className="text-lg text-[#C0C0C0]">
               Discover our exclusive collection of premium technology products.
               Experience innovation and quality like never before.

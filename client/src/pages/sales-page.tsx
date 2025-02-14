@@ -40,14 +40,6 @@ export default function SalesPage() {
                     Save ${(product.originalPrice - product.price).toFixed(2)}
                   </div>
                   <ProductCard product={product} />
-                  <div className="absolute bottom-[85px] left-4 text-sm z-10">
-                    <span className="line-through text-white/60 mr-2">
-                      ${product.originalPrice}
-                    </span>
-                    <span className="text-white font-bold">
-                      ${product.price}
-                    </span>
-                  </div>
                 </div>
               ))
             )}

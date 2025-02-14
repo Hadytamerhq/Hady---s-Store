@@ -94,7 +94,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       name: "Gaming Console X",
       originalPrice: 499.99,
       price: 399.99,
-      image: "https://images.unsplash.com/photo-1486401899868-0e435ed85128?w=500",
+      image: "https://images.unsplash.com/photo-1605901309584-818e25960a8f?w=500",
       description: "Next-gen gaming console",
       onSale: true
     },
@@ -103,7 +103,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       name: "Portable SSD 2TB",
       originalPrice: 299.99,
       price: 199.99,
-      image: "https://images.unsplash.com/photo-1563448676363-679a9ff572d5?w=500",
+      image: "https://images.unsplash.com/photo-1597226401947-321aa406b34e?w=500",
       description: "Ultra-fast portable storage",
       onSale: true
     },
@@ -112,7 +112,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       name: "Wireless Controller",
       originalPrice: 69.99,
       price: 49.99,
-      image: "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=500",
+      image: "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=500",
       description: "Premium wireless game controller",
       onSale: true
     },
@@ -121,7 +121,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       name: "Gaming Router",
       originalPrice: 249.99,
       price: 179.99,
-      image: "https://images.unsplash.com/photo-1544443632-6ab5e5e2a57e?w=500",
+      image: "https://images.unsplash.com/photo-1648410557569-b8ff0598b100?w=500",
       description: "Low-latency gaming router",
       onSale: true
     }
