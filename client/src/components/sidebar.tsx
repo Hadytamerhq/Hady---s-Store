@@ -18,7 +18,7 @@ const menuItems = [
 ];
 
 export function Sidebar() {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const { logoutMutation } = useAuth();
 
   return (
@@ -34,9 +34,7 @@ export function Sidebar() {
                   "w-full justify-start gap-2",
                   location === item.href && "bg-secondary"
                 )}
-                onClick={() => {
-                  // TODO: Implement navigation
-                }}
+                onClick={() => setLocation(item.href)}
               >
                 <item.icon className="h-4 w-4" />
                 {item.title}

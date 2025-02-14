@@ -7,12 +7,16 @@ import { AuthProvider } from "./hooks/use-auth";
 import { CartProvider } from "./lib/cart-context";
 import HomePage from "@/pages/home-page";
 import AuthPage from "@/pages/auth-page";
+import SalesPage from "@/pages/sales-page";
+import WishlistPage from "@/pages/wishlist-page";
 import { ProtectedRoute } from "./lib/protected-route";
 
 function Router() {
   return (
     <Switch>
       <ProtectedRoute path="/" component={HomePage} />
+      <ProtectedRoute path="/sales" component={SalesPage} />
+      <ProtectedRoute path="/wishlist" component={WishlistPage} />
       <Route path="/auth" component={AuthPage} />
       <Route component={NotFound} />
     </Switch>
