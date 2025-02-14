@@ -15,7 +15,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full aspect-square object-cover transition-transform group-hover:scale-105"
+          className="w-full aspect-[4/3] object-cover transition-transform group-hover:scale-105"
         />
         <Button
           variant="ghost"
@@ -25,15 +25,16 @@ export default function ProductCard({ product }: { product: Product }) {
           }`}
           onClick={() => setIsWishlisted(!isWishlisted)}
         >
-          <Heart className="h-5 w-5" fill={isWishlisted ? "currentColor" : "none"} />
+          <Heart className="h-4 w-4" fill={isWishlisted ? "currentColor" : "none"} />
         </Button>
       </CardContent>
-      <CardFooter className="p-6 flex flex-col gap-4">
+      <CardFooter className="p-4 flex flex-col gap-2">
         <div>
-          <h3 className="font-semibold text-lg">{product.name}</h3>
-          <p className="text-muted-foreground">${product.price}</p>
+          <h3 className="font-medium text-sm line-clamp-2">{product.name}</h3>
+          <p className="text-sm text-muted-foreground">${product.price}</p>
         </div>
         <Button
+          size="sm"
           className="w-full transition-colors"
           onClick={() => addItem(product)}
         >
