@@ -10,7 +10,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const [isWishlisted, setIsWishlisted] = useState(false);
 
   return (
-    <Card className="overflow-hidden group">
+    <Card className="overflow-hidden group border-0 bg-white/10 hover:bg-white/20 transition-colors">
       <CardContent className="p-0 relative">
         <img
           src={product.image}
@@ -18,20 +18,22 @@ export default function ProductCard({ product }: { product: Product }) {
           className="w-full aspect-[4/3] object-cover transition-transform group-hover:scale-105"
         />
         <Button
-          variant="ghost"
+          variant="secondary"
           size="icon"
-          className={`absolute top-2 right-2 ${
-            isWishlisted ? "text-red-500" : "text-muted-foreground"
-          }`}
+          className="absolute top-2 right-2 bg-black/50 hover:bg-black/70"
           onClick={() => setIsWishlisted(!isWishlisted)}
         >
-          <Heart className="h-4 w-4" fill={isWishlisted ? "currentColor" : "none"} />
+          <Heart 
+            className="h-4 w-4" 
+            fill={isWishlisted ? "currentColor" : "none"}
+            color={isWishlisted ? "white" : "white"}
+          />
         </Button>
       </CardContent>
       <CardFooter className="p-4 flex flex-col gap-2">
         <div>
-          <h3 className="font-medium text-sm line-clamp-2">{product.name}</h3>
-          <p className="text-sm text-muted-foreground">${product.price}</p>
+          <h3 className="font-medium text-sm line-clamp-2 text-white">{product.name}</h3>
+          <p className="text-sm text-white/70">${product.price}</p>
         </div>
         <Button
           size="sm"

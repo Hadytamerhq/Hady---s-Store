@@ -1,17 +1,31 @@
 import { Button } from "@/components/ui/button";
-import { useAuth } from "@/hooks/use-auth";
 import { useCart } from "@/lib/cart-context";
-import { ShoppingCart, LogOut } from "lucide-react";
+import { ShoppingCart, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sidebar } from "./sidebar";
 
 export function SiteHeader() {
-  const { user, logoutMutation } = useAuth();
   const { items, setIsOpen } = useCart();
-
   const itemCount = items.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-end gap-4">
+      <div className="container flex h-16 items-center">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="mr-6">
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="p-0">
+            <Sidebar />
+          </SheetContent>
+        </Sheet>
+
+        <div className="flex-1 text-center">
+          <h1 className="text-xl font-semibold">Hady's Store</h1>
+        </div>
+
         <Button
           variant="ghost"
           size="icon"
@@ -25,17 +39,6 @@ export function SiteHeader() {
             </span>
           )}
         </Button>
-
-        <div className="flex items-center gap-2">
-          <span className="text-sm">Welcome, {user?.username}</span>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => logoutMutation.mutate()}
-          >
-            <LogOut className="h-5 w-5" />
-          </Button>
-        </div>
       </div>
     </header>
   );

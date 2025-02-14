@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Heart, TagIcon } from "lucide-react";
+import { Heart, TagIcon, LogOut } from "lucide-react";
 import { useLocation } from "wouter";
+import { useAuth } from "@/hooks/use-auth";
 
 const menuItems = [
   {
@@ -18,14 +19,12 @@ const menuItems = [
 
 export function Sidebar() {
   const [location] = useLocation();
+  const { logoutMutation } = useAuth();
 
   return (
-    <div className="pb-12 w-64 border-r">
-      <div className="space-y-4 py-4">
-        <div className="px-4 py-2">
-          <h2 className="mb-2 px-2 text-lg font-semibold tracking-tight">
-            Menu
-          </h2>
+    <div className="h-full py-6">
+      <div className="space-y-4">
+        <div className="px-3 py-2">
           <div className="space-y-1">
             {menuItems.map((item) => (
               <Button
@@ -43,6 +42,14 @@ export function Sidebar() {
                 {item.title}
               </Button>
             ))}
+            <Button
+              variant="ghost"
+              className="w-full justify-start gap-2 text-destructive"
+              onClick={() => logoutMutation.mutate()}
+            >
+              <LogOut className="h-4 w-4" />
+              Logout
+            </Button>
           </div>
         </div>
       </div>
